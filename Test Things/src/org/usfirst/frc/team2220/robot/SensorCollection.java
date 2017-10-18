@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.*;
 /**
  * An ArrayList plus a CSV writer that takes sensor data and writes them to a CSV file.
- * I'm a bit worried that the Map that's created by the Maps created by the writeHeaders and 
- * writeAllValues methods won't match in the CSV, so maybe we could add some safeguard for that. 
+ * I'm a bit worried that the Map that's created by the writeHeaders and writeAllValues 
+ * methods won't match the columns in the CSV, so maybe we could add some safeguard for that later. 
  * @author Daniel Naranjo
  *
  */
