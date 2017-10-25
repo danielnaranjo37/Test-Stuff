@@ -33,8 +33,8 @@ public class Talon extends CANTalon implements Sensor{
 	/**
 	 * 
 	 */
-	public HashMap<String,Double> getAllValues(){
-		HashMap<String,Double> map = new HashMap<String,Double>();
+	public LinkedHashMap<String,Double> getAllValues(){
+		LinkedHashMap<String,Double> map = new LinkedHashMap<String,Double>();
 		//add whatever values like so 
 		map.put(name + " Speed", super.getSpeed());
 		map.put(name + " Temperature", super.getTemperature());

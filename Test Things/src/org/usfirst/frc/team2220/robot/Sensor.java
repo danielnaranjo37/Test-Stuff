@@ -9,7 +9,7 @@ import java.util.*;
  *
  */
 public interface Sensor {
-	//recommended: HashMap<String,Double> allTheValues = new HashMap<String,Double>();
+	//Recommended: LinkedHashMap<String,Double> allTheValues;
 	
 	/**
 	 * Gets the sensor's name, ex. "CANTalon 15".
@@ -24,5 +24,5 @@ public interface Sensor {
 	 * @return A HashMap with the key being the value type (temperature, voltage, etc.),
 	 * and the Double being the number itself.
 	 */
-	HashMap<String,Double> getAllValues(); 
+	LinkedHashMap<String,Double> getAllValues(); 
 }

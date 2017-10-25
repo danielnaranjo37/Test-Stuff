@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.*;
 /**
  * An ArrayList plus a CSV writer that takes sensor data and writes them to a CSV file.
- * I'm a bit worried that the Map that's created by the writeHeaders and writeAllValues 
- * methods won't match the columns in the CSV, so maybe we could add some safeguard for that later. 
  * @author Daniel Naranjo
  *
  */
@@ -37,7 +35,7 @@ public class SensorCollection {
 		ArrayList<String> toAppend = new ArrayList<String>();
 		
 		for (Sensor sensor: sensors){ //get the value names and write them into the append list
-			Map<String,Double> map = sensor.getAllValues(); 
+			LinkedHashMap<String,Double> map = sensor.getAllValues(); 
 			for (String key: map.keySet()){
 				toAppend.add(key);
 			}
@@ -63,7 +61,7 @@ public class SensorCollection {
 		ArrayList<String> toAppend = new ArrayList<String>(); 
 		
 		for (Sensor sensor : sensors){ //get the data and write them into the append list 
-			Map <String,Double> map = sensor.getAllValues();
+			LinkedHashMap<String,Double> map = sensor.getAllValues();
 			for (String key : map.keySet()){
 				toAppend.add(key);
 			}
