@@ -22,7 +22,7 @@ public class Robot extends IterativeRobot {
 	Talon leftMaster  = new Talon(8);
 	Talon leftSlave   = new Talon(2);
 	
-	CSVWriter writer; //new CSVWriter("/home/lvuser/Test.CSV");
+//	CSVWriter writer; //new CSVWriter("/home/lvuser/Test.CSV");
 	
 	Joystick joystick = new Joystick(0);
 	
@@ -41,21 +41,21 @@ public class Robot extends IterativeRobot {
 		leftSlave.set(leftMaster.getDeviceID());	
 		leftMaster.setInverted(true);
 		
-		sensors.addSensor(rightMaster);
+		sensors.add(rightMaster); 
 		
-		try {
-			writer = new CSVWriter("/home/lvuser/Test.CSV"); 
-			String[] headers = new String[]{
-				"Left Deadzone Output",
-				"Right Deadzone Output",
-				"Right Joystick Raw Axis",
-				"Left Joystick Raw Axis",
-			};
-			writer.appendRow(headers);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			writer = new CSVWriter("/home/lvuser/Test.CSV"); 
+//			String[] headers = new String[]{
+//				"Left Deadzone Output",
+//				"Right Deadzone Output",
+//				"Right Joystick Raw Axis",
+//				"Left Joystick Raw Axis",
+//			};
+//			writer.appendRow(headers);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 		
 	/**
@@ -127,40 +127,40 @@ public class Robot extends IterativeRobot {
 		
 		sensors.writeAllValues(); 
 		
-		SmartDashboard.putNumber("Left Deadzone Output", leftDeadPut);
-		SmartDashboard.putNumber("Right Deadzone Output", rightDeadPut);
+//		SmartDashboard.putNumber("Left Deadzone Output", leftDeadPut);
+//		SmartDashboard.putNumber("Right Deadzone Output", rightDeadPut);
+//		
+//		SmartDashboard.putNumber("Right Joystick Raw Axis", joystick.getRawAxis(5));
+//		SmartDashboard.putNumber("Left Joystick Raw Axis", joystick.getRawAxis(1));
+//		
+//		SmartDashboard.putNumber("Right Master Temperature", rightMaster.getTemperature());
+//		SmartDashboard.putNumber("Right Master Current", rightMaster.getOutputCurrent());
+//		SmartDashboard.putNumber("Right Master Voltage", rightMaster.getOutputVoltage());
+//
+//		SmartDashboard.putNumber("Right Slave Temperature", rightSlave.getTemperature());
+//		SmartDashboard.putNumber("Right Slave Current", rightSlave.getOutputCurrent());
+//		SmartDashboard.putNumber("Right Slave Voltage", rightSlave.getOutputVoltage());
+//		
+//		SmartDashboard.putNumber("Left Master Temperature", leftMaster.getTemperature());
+//		SmartDashboard.putNumber("Left Master Current", leftMaster.getOutputCurrent());
+//		SmartDashboard.putNumber("Left Master Voltage", leftMaster.getOutputVoltage());
+//		
+//		SmartDashboard.putNumber("Left Slave Temperature", leftSlave.getTemperature());
+//		SmartDashboard.putNumber("Left Slave Current", leftSlave.getOutputCurrent());
+//		SmartDashboard.putNumber("Left Slave Voltage", leftSlave.getOutputVoltage());
 		
-		SmartDashboard.putNumber("Right Joystick Raw Axis", joystick.getRawAxis(5));
-		SmartDashboard.putNumber("Left Joystick Raw Axis", joystick.getRawAxis(1));
-		
-		SmartDashboard.putNumber("Right Master Temperature", rightMaster.getTemperature());
-		SmartDashboard.putNumber("Right Master Current", rightMaster.getOutputCurrent());
-		SmartDashboard.putNumber("Right Master Voltage", rightMaster.getOutputVoltage());
-
-		SmartDashboard.putNumber("Right Slave Temperature", rightSlave.getTemperature());
-		SmartDashboard.putNumber("Right Slave Current", rightSlave.getOutputCurrent());
-		SmartDashboard.putNumber("Right Slave Voltage", rightSlave.getOutputVoltage());
-		
-		SmartDashboard.putNumber("Left Master Temperature", leftMaster.getTemperature());
-		SmartDashboard.putNumber("Left Master Current", leftMaster.getOutputCurrent());
-		SmartDashboard.putNumber("Left Master Voltage", leftMaster.getOutputVoltage());
-		
-		SmartDashboard.putNumber("Left Slave Temperature", leftSlave.getTemperature());
-		SmartDashboard.putNumber("Left Slave Current", leftSlave.getOutputCurrent());
-		SmartDashboard.putNumber("Left Slave Voltage", leftSlave.getOutputVoltage());
-		
-		String[] strings = new String[]{
-				"" + leftDeadPut,
-				"" + rightDeadPut,
-				"" + joystick.getRawAxis(5),
-				"" + joystick.getRawAxis(1),
-		};
-		try {
-			writer.appendRow(strings);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		String[] strings = new String[]{
+//				"" + leftDeadPut,
+//				"" + rightDeadPut,
+//				"" + joystick.getRawAxis(5),
+//				"" + joystick.getRawAxis(1),
+//		};
+//		try {
+//			writer.appendRow(strings);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 	/**

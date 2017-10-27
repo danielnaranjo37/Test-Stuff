@@ -40,10 +40,11 @@ public class Talon extends CANTalon implements Sensor{
 		map.put(name + " Temperature", super.getTemperature());
 		map.put(name + " Output Current", super.getOutputCurrent());
 		map.put(name + " Output Voltage", super.getOutputVoltage());
-		map.put(name + " Error", super.getError()); 
-		map.put(name + " Bus Voltage", super.getBusVoltage());
-		map.put(name + " Analog in Position", 0.0 + super.getAnalogInPosition());
-		map.put(name + " Analog in Velocity", 0.0 + super.getAnalogInVelocity());
+		
+//		map.put(name + " Error", super.getError()); 
+//		map.put(name + " Bus Voltage", super.getBusVoltage());
+//		map.put(name + " Analog in Position", 0.0 + super.getAnalogInPosition());
+//		map.put(name + " Analog in Velocity", 0.0 + super.getAnalogInVelocity());
 		
 		return map;
 	}
