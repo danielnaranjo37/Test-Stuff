@@ -25,26 +25,28 @@ public class SensorCollection {
 			e.printStackTrace();
 		}	
 	}
-	
+
+
 	/**
 	 * Writes sensor value names as headers into the CSV file.
 	 * Place before writing the data in. 
 	 */
 	private void writeHeaders(){
 
-		ArrayList<String> toAppend = new ArrayList<String>();
-		
+		ArrayList<String> appendList = new ArrayList<String>();
+
 		for (Sensor sensor: sensors){ //get the value names and write them into the append list
 			LinkedHashMap<String,Double> map = sensor.getAllValues(); 
 			for (String key: map.keySet()){
-				toAppend.add(key);
+				appendList.add(key);
 			}
 		}
 		
-		String[] appending = (String[]) toAppend.toArray();
+		String[] append = appendList.toArray(new String[appendList.size()]);
+
 		
 		try { //append the row to the CSV 
-			writer.appendRow(appending);
+			writer.appendRow(append);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -58,30 +60,33 @@ public class SensorCollection {
 	public void writeAllValues(){
 		writeHeaders(); //set up the headers
 		
-		ArrayList<String> toAppend = new ArrayList<String>(); 
+		ArrayList<String> appendList = new ArrayList<String>(); //make String ArrayList 
 		
-		for (Sensor sensor : sensors){ //get the data and write them into the append list 
-			LinkedHashMap<String,Double> map = sensor.getAllValues();
-			for (String key : map.keySet()){
-				toAppend.add(key);
+		for (Sensor sensor : sensors){ //iterate over all sensors 
+			LinkedHashMap<String,Double> map = sensor.getAllValues(); //get their values 
+			
+			for (String key : map.keySet()) { //iterate over the value names 
+				Double d = map.get(key); //get the value there
+				appendList.add( "" + d ); //add the value to the append list
 			}
 		}
 		
-		String[] appending = (String[]) toAppend.toArray();
+		String[] append = appendList.toArray(new String[appendList.size()]);
 		
 		try {
-			writer.appendRow(appending);
+			writer.appendRow(append);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return;
+		return;	
 	}
+		
 
 	/**
 	 * Adds a sensor to the ArrayList.
 	 */
-	public void addSensor(Sensor sensor){
+	public void add(Sensor sensor){
 		sensors.add(sensor);
 		return;
 	}
